@@ -13,7 +13,7 @@
 ### Section 5
 - Linking Interface Builder with swift code file via IBOutlet
 
-Tip) Xcode 13부터 image literal을 사용하려면 #imageLiteral( 을 입력해야함 (alternative: UIImage(named: “IMAGENAME”))
+    - Tip) Xcode 13부터 image literal을 사용하려면 #imageLiteral( 을 입력해야함 (alternative: UIImage(named: “IMAGENAME”))
 
 ### Section 6
 - Autolayout 관련 기능들 연습 + 미니 Challenge project
