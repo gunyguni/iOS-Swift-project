@@ -20,3 +20,24 @@
     - Constraints & Alignment 설정 (kotlin과 비슷함)
     - View Container를 통한 화면 분할
  
+
+### Section 7
+- Apple official API document 찾기 (https://developer.apple.com/documentation/technologies)
+- AVFoundation을 활용한 audio & video code implementation
+- UIButton의 sender property를 이용하는 방법 
+- DispatchQueue 사용법 
+
+### Section 8
+- Auto Layout에서 Text Overflow 해결하기
+- storyboard의 label property (화면 우측 Pane)에서: 
+    1. Lines 를 0으로 바꾸면 Overflow 시 자동 줄바꿈을 해준다
+    2. AutoShrink에서 minimum font size를 설정해준다.
+- Timer API 사용법
+
+### Section 9
+- Build project with MVC Pattern
+- Model: structure를 사용한 Modelling 방법
+- Group을 통한 MVC 파일 구분
+- self property의 Immutability:
+    - 모든 self property는 Immutable하다.
+    - 따라서 instance 스스로 자신의 값을 바꾸는 메소드를 작성하려면 mutating keyword를 func 앞에 써줘야 한다.
