@@ -41,3 +41,6 @@
 - self property의 Immutability:
     - 모든 self property는 Immutable하다.
     - 따라서 instance 스스로 자신의 값을 바꾸는 메소드를 작성하려면 mutating keyword를 func 앞에 써줘야 한다.
+
+### Section 10
+- MVC Pattern mini Project (Game book mimic)
