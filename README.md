@@ -44,3 +44,12 @@
 
 ### Section 10
 - MVC Pattern mini Project (Game book mimic)
+
+### Section 11
+- UISlider 사용법
+- Class & inheritance를 프로젝트에 적용하기
+- Handling multi screen files 
+    - How to navigate to another screen
+    - How to pass values between screens
+    - Cocoa Touch class
+- Optional Binding, Optional chaining, nil coalescing operator 적용
