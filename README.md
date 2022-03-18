@@ -53,3 +53,13 @@
     - How to pass values between screens
     - Cocoa Touch class
 - Optional Binding, Optional chaining, nil coalescing operator 적용
+
+### Section 12
+- Mini Project using segue
+
+### Section 13
+- Dark-mode
+- UITextField 적용
+    - 키보드와 호환되는 UITextFieldDelegate 적용하는 법
+- HTTP 통신
+- Json file parsing by json decoder
