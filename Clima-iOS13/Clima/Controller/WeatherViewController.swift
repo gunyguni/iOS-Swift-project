@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//API key: af4732daa5920253124aaeb442c5d5fb
 
 class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
 
