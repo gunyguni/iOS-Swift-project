@@ -58,8 +58,15 @@
 - Mini Project using segue
 
 ### Section 13
-- Dark-mode
+- Dark-mode 적용 (vector file .svg 사용법)
 - UITextField 적용
-    - 키보드와 호환되는 UITextFieldDelegate 적용하는 법
-- HTTP 통신
-- Json file parsing by json decoder
+    - UITextFieldDelegate 적용
+- protocol과 delegate Pattern 프로젝트에 적용하기
+- URLSession으로 HTTP 통신
+- Json file parsing by JSONDecoder and Decodable protocol
+- Computed property 적용
+- Extension 적용
+- Core Location to get GPS data
+    1. CoreLocation api 사용
+    2. CCLocationManagerDelegate 적용
+- info.plist 수정
