@@ -70,3 +70,7 @@
     1. CoreLocation api 사용
     2. CCLocationManagerDelegate 적용
 - info.plist 수정
+
+### Section 14
+- http 통신, delegate pattern을 이용한 mini project
+- UIPickerViewDelegate & UIPickerViewDataSource 적용
