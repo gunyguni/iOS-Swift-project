@@ -50,7 +50,6 @@ class ViewController: UIViewController {
     }
     
     @objc func updateTimer() {
-        //example functionality
         if secondsPassed < totalTime {
             secondsPassed += 1
             
