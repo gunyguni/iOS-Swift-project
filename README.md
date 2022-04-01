@@ -74,3 +74,15 @@
 ### Section 14
 - http 통신, delegate pattern을 이용한 mini project
 - UIPickerViewDelegate & UIPickerViewDataSource 적용
+
+### Section 15
+- text animation using for loop and Timer class
+- Cocoapods(package dependency manager)를 통한 3rd party library 사용
+    - **주의! M1 맥북 사용시 ‘sudo arch -x86_64 gem install ffi’ 해주고 pod install 대신 ‘arch -x86_64 pod install’ 해줘야 함. 안그러면 cpu 차이 때문에 에러남**
+- Constants struct를 통한 상수타입 관리
+- Table View와 Table view cell을 이용한 list view 구현
+- .xib 파일을 통한 디자인 수정
+- 프로젝트에 Firebase Auth연동
+- Firebase Firestore를 통한 DB 연동
+- FireStore DB 구독 (I.e. Listening for realtime updates on DB)
+- IQKeyboardManager - Swift Package Manager(SPM) 적용
