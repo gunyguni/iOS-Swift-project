@@ -8,9 +8,11 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
-class ToDoListViewController: UITableViewController {
+class ToDoListViewController: SwipeTableViewController, UINavigationBarDelegate {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var todoItems: Results<Item>?
     let realm = try! Realm()
     
@@ -22,15 +24,7 @@ class ToDoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = UIColor.systemBlue
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationItem.standardAppearance = appearance
-        navigationItem.scrollEdgeAppearance = appearance
-        
-        
-        //        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+               //        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         
         //        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
@@ -38,6 +32,25 @@ class ToDoListViewController: UITableViewController {
         //        }
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = UIColor(hexString:selectedCategory!.color)
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        title = selectedCategory!.name
+        
+         navigationController?.navigationBar.backgroundColor = UIColor(hexString:selectedCategory!.color)
+        searchBar.barTintColor = UIColor(hexString:selectedCategory!.color)
+        searchBar.tintColor = UIColor.white
+
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+      return .topAttached
     }
     
     //MARK: - Tableview Datasource Methods
@@ -48,11 +61,18 @@ class ToDoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
         
         if let item = todoItems?[indexPath.row] {
             cell.textLabel!.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
+            
+            if let color = UIColor(hexString: selectedCategory!.color)? .darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+                cell.backgroundColor = color
+                cell.textLabel!.textColor = ContrastColorOf(color , returnFlat: true)
+            }
+            
         } else {
             cell.textLabel?.text = "No Items Added"
         }
@@ -124,6 +144,20 @@ class ToDoListViewController: UITableViewController {
     func loadItems() {
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         tableView.reloadData()
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let item = todoItems?[indexPath.row] {
+            do {
+                
+                try self.realm.write {
+                    self.realm.delete(item)
+                }
+            } catch {
+                print("Error deleting item, \(error)")
+            }
+        }
+            
     }
     
     
