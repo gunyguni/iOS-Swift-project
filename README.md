@@ -86,3 +86,43 @@
 - Firebase Firestore를 통한 DB 연동
 - FireStore DB 구독 (I.e. Listening for realtime updates on DB)
 - IQKeyboardManager - Swift Package Manager(SPM) 적용
+
+### Section 16
+- CLI practice (linux 명령어들)
+
+### Section 17
+- SwiftUI Practice
+    - VHZ Stack
+    - RGB & Hex Colors
+    - SF Symbols
+    - Custom Fonts
+    - Dynamic length list using “Identifiable” protocol
+    - Observer Design Pattern 적용
+    - WebView 적용 (UIViewRepresentable을 통한 UIKit 적용)
+    
+**Xcode 13 부터 SwiftUI에 info.plist랑 LaunchScreen이 사라져서 이유를 찾아봤다.**
+info.plist : https://useyourloaf.com/blog/xcode-13-missing-info.plist/
+launchScreen.storyboard: https://useyourloaf.com/blog/dropping-launch-storyboards/
+
+### Section 18
+Git & version control using Xcode GUI
+
+### Section 19
+Using TableViewController class 
+TableView의 accesary (checkbox) 적용하기
+alertdialog 만들기
+Persistant Data Storage CRUD by 
+- NSUserDefaults
+- NSCoder & FileManager for local storage path
+- Core Data
+    - Querying and sorting when fetching core data
+Swipeable(Dismissible) tableview cell using SwipeCellKit pod 
+Refactoring by custom  superclass
+Color decoration by Chameleon Framework for  Swift
+
+### Section 20
+App Store Connect에서 앱 등록 및 In-app purchase 관련 환경설정
+App Capabilities에서 In-app purchase를 설정하면 자동으로 설치되는 StoreKit 라이브러리로 인앱 결제 구현 (강의 285)
+
+### Section 21
+Computed Property & Observed Property practice
