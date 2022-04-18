@@ -59,6 +59,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 } else {
                     self.navigationItem.title = "Not Hotdog!"
                 }
+                
             }
         }
         
