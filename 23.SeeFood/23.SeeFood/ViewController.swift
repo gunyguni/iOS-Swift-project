@@ -43,11 +43,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func detect(image: CIImage) {
-        
+        // 1. 프로젝트에 추가한 .mlmodel 파일을 VNCoreMLModel 인스턴스로 로딩한다.
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
             fatalError("Loading CoreML Model Failed")
         }
         
+        // 2. request의 completion handler를 설정한다. request가 완료된 후 어떻게 처리할지, error 발생시 어떻게 할지 정의한다.
         let request = VNCoreMLRequest(model: model) { request, error in
             guard let results = request.results as? [VNClassificationObservation] else {
                 fatalError("Model failed to process image")
@@ -63,8 +64,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
+        // 3. Request의 handler를 정의한다. 여기에 우리가 사용할 ciImage를 넣어준다.
         let handler = VNImageRequestHandler(ciImage: image)
         
+        // 4. handler를 통해서 request를 처리한다.
         do {
             try handler.perform([request])
         } catch {
