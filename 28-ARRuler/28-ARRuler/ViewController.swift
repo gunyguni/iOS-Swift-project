@@ -43,6 +43,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if dotNodes.count >= 2 {
             for dot in dotNodes {
